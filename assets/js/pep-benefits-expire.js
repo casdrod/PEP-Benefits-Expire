@@ -105,9 +105,16 @@ function getTimeRemaining(endtime) {
   
 	updateClock();
 	var timeinterval = setInterval(updateClock, 1000);
-  }
   
   var lastDayOfYear = new Date(new Date().getFullYear(), 11, 31);
   var deadline = lastDayOfYear;
   initializeClock('clockdiv', deadline);
 
+}
+
+
+
+
+// Copyright Year Auto Update
+date = document.getElementById("copyDate");
+date.innerHTML = new Date().getFullYear();

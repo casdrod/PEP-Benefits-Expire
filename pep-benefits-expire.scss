@@ -3,10 +3,10 @@
 .flex-ed,.col-flex-ed{display:flex}.flex-ed{flex-direction:row}.col-flex-ed{flex-flow:column}star{line-height:1.5;margin:7px auto;display:block}star:after{font-size:26px;font-family:'fontello';font-weight:400;margin:0;font-style:normal;content:'\e80f \e80f \e80f \e80f \e80f';color:#fcd800;padding:0 10px}
 
 
-$primary: #25AAE1;
-$secondary:#282A37;
-$font: Lato,sans-serif;
-$font2: "Rajdhani", sans-serif;
+$primary: #2BB0ED;
+$secondary:#12527C;
+$font: "Barlow", sans-serif;
+$font2: "Manrope", sans-serif;
 $text: #000000;
 
 #fixed-tabs{position:fixed;bottom:0;right:0;width:100%;text-align:center;line-height:1;z-index:1000;display:flex}
@@ -25,7 +25,7 @@ footer{margin-bottom:42px!important}
 #fixed-tabs strong{display:none}
 }
 body{overflow-x:hidden;position:relative;background:#fff;text-align:center;color:$text;font:400 18px/26px $font;}
-p{color: $text;font:400 18px/1.2 $font; letter-spacing: 0.36px;}
+p{color: $text;font:400 18px/1.4 $font2; letter-spacing: 0.36px;}
 a{display:inline-block;text-decoration:none;cursor:pointer;color:$secondary}
 a:hover{color:$secondary}
 h1,h2 h3,h4,h5,h6{font-family:$font;text-align:center}
@@ -61,30 +61,31 @@ main ul{list-style:none;padding:0;margin:10px auto;text-align:left;display:table
     &:hover{background-color:$text;color:#fff}
 }
 
-header{position:relative;padding:10px;z-index:100;background-color:#FFF; filter: drop-shadow(7px 7px 5px rgba(0, 0, 0, 0.2));
-    .logo{margin:0;}
-    address{text-align:center; padding-left: 35px;}
-    .phy{font-size:19px;color:$text;line-height:1.26;font-weight:400;letter-spacing:normal; padding-left: 34px; text-align: left;
-        &:hover{color:$primary;}
+header{position:relative;padding:10px;z-index:100;background-color:#fff; box-shadow:0 3px 7px rgba(0,0,0,0.35);
+        #nav{display:flex;max-width:1320px;justify-content:space-between;margin:auto;align-items:center;padding:2px;
+        .logo{margin:0;}
+        .phy{font-size:22px;color:#000;line-height:1.26;font-weight:400;letter-spacing:normal; padding-left: 40px; text-align: left;
+            &:hover{color:$primary;}
+        }
+        .phone{color:#000;font:600 32px/1 $font;display:block; padding-left: 40px;
+            &:hover{color:$primary}
+            span {display: block; color: $text; font-size: 18px;}
+        }
+        .header-buttons{margin:0;padding:7px 10px;font-size:14px;letter-spacing:normal;
+            .btn,.btn-alt{font-size:22px;border:none;width:320px;margin:2px;color: #000;padding:7px 5px 10px; min-width: 160px;text-transform: none; padding-left: 30px; letter-spacing: normal; border-radius: 25px; font-weight: 600;
+                &:hover {color: #fff;}
+                span{font-size:25px;letter-spacing:normal}
+                i {background-color: #fff; color: $primary; left: 7px;}
+            }
+        }
+        a { position: relative;}
+        i {display: inline-block; border-radius: 50%; background-color: $primary; color: white; position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 16px; padding: 5px 4px 7px;}
     }
-    a { position: relative;}
-    i {display: inline-block; border-radius: 50%; background-color: $primary; color: white; position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: 16px; padding: 5px 3px;}
 }
 .mobile-buttons {display: none;}
-.phone{color:$text;font:600 30px/1 $font;display:block; padding-left: 35px;
-    &:hover{color:$primary}
-    span {display: block; color: $text; font-size: 18px;}
-}
 
-#nav{display:flex;max-width:1320px;justify-content:space-between;margin:auto;align-items:center;padding:2px;
-    .header-buttons{margin:0;padding:7px 10px;font-size:14px;letter-spacing:normal;
-        .btn,.btn-alt{font-size:22px;border:none;width:320px;margin:2px;padding:7px 5px; min-width: 160px;text-transform: none; padding-left: 30px; letter-spacing: normal; border-radius: 25px; font-weight: 600;
-            span{font-size:25px;letter-spacing:normal}
-            i {background-color: #fff; color: $primary; left: 5px;}
-        }
-    }
-}
-.fix-nav header{position:fixed;width:100%;left:0;top:0;right:0;animation-duration:.8s;animation-fill-mode:both;animation-name:slideIn;z-index:10000;box-shadow:0 3px 7px rgba(0,0,0,0.35);
+
+.fix-nav header{position:fixed;width:100%;left:0;top:0;right:0;animation-duration:.8s;animation-fill-mode:both;animation-name:slideIn;z-index:10000;
     .logo {max-height: 120px; margin-bottom: 0; img {max-height: 120px; margin-bottom: 0;}}
 }
 
@@ -95,57 +96,72 @@ header{position:relative;padding:10px;z-index:100;background-color:#FFF; filter:
 .bg-1{background-color: #fff; padding: 0;}
 .bg-2{background-color: $secondary; padding: 10px;}
 .useit #main-nav, .useit .mean-bar{display: none !important;}
-.useit .top{font-size: 26px; font-weight: 700; max-width: 1320px; margin: 30px auto 10px;
+.useit .top{font-size: 26px; font-weight: 700; max-width: 1320px; margin: 90px auto;
     h2 {color: $text; font-size: 36px; letter-spacing: -.02em; font-weight: 500;}
     p {max-width: 1150px; margin: 20px auto; font-size: 23px;}
 }
 
 .banner { max-width: 1920px; width: 100%; margin: 0 auto; border-bottom: 12px solid $primary; position: relative;
     article {position: absolute; max-width: 770px; text-align: left; padding: 20px; top: 50%; transform: translateY(-50%); padding-top: 70px; left: 5%;
-        .banner-stamp {position: absolute; top: -30px; right: -50px;}
-        h1 {text-align: left; color: #fff; text-shadow: 3px 3px 7px #000; font-weight: 700; font-size: 92px; line-height: 1.2;}
-        p {font-size: 21px;}
+        .banner-stamp {position: absolute; top: -40px; right: -70px;}
+        h1 {text-align: left; color: #fff; text-shadow: 3px 3px 7px #000; font-weight: 700; font-size: 92px; line-height: 1;}
+        p {font-size: 21px;
+            &:first-of-type {margin-top: 30px;}
+        }
     }
     figure { width: 100%; img {width: 100%;}}
 }
 
-.callout-icons {max-width: 1150px; margin: 60px auto;
-    h2 {width: 100%; text-align: center; background: $secondary; color: #fff; font-size: 55px; padding: 20px 40px; font-weight: 400; margin-bottom: 0;
+.callout-icons {max-width: 1150px; margin: 80px auto;
+    h2 {width: 100%;
+        text-align: center;
+        background: $secondary;
+        color: #fff;
+        font-size: 50px;
+        font-family: "Barlow", sans-serif;
+        padding: 25px 40px;
+        font-weight: 700;
+        margin-bottom: 0;
         span {font-size: 53px;}
     }
     .flex-ed {
-        .callout-item { flex: 0 1 25%; padding: 15px 6px; text-align: center; background: #fff;
+        .callout-item { flex: 0 1 25%; padding: 25px 5px; text-align: center; background: #fff;
             h3 {letter-spacing: .1em; font-size: 22px; text-transform: uppercase;font-weight: 400; color: #000000; font-family: $font;
                 &.short {margin-top: 25px;}
             }
             span {height: 110px; display: flex; position: relative; align-items: center;}
             img {margin: 13px auto;}
             &.short-icon img {margin: 30px auto;}
-            &:nth-of-type(odd) {background: rgba(25, 106, 62, .04);}
+            &:nth-of-type(odd) {background: rgba(1, 43, 72, .04);}
         }
     }
 }
 
 #special {background: #fff; border: 18px solid #25aae1; position: relative; padding: 20px; max-width: 1050px; margin: 100px auto;
     &:after {position: absolute; content: ''; background: url('assets/images/pep-benefits-expire-special-decor.png'); background-size: cover; max-width: 50%; width: 405px; height: 388px; top: 50%; left: 50%; transform: translate(-50%,-50%);}
-    .offer-text {font: 500 50px/1.3 $font2; color: $text; text-align:center; max-width: 500px; margin: 10px auto;
+    .offer-text {font: 500 50px/1.3 $font2; color: $text; text-align:center; max-width: 600px; margin: 10px auto;
         span {display: block; font-size: 133px; font-weight: 700;}
     }
     .special-text {position: absolute; top: 0; left: 20px;}
     .sub-note {text-align: right; font-size: 20px; letter-spacing: 0.1em;}
 }
 
-.useit {
+.useit {position: relative;
     .content{ max-width: 1260px; margin: 60px auto; background-color: #FFFFFF; 
-        .call{padding: 70px 10px; display: flex; align-items: center; justify-content: space-around; background-color: #fff;
+        .call{padding: 35px 10px; display: flex; align-items: center; justify-content: space-around; background-color: #fff;
             article {flex: 0 1 730px;
-                p{font-size: 46px; padding: 10px; color: $text; font-family: $font; font-weight: 400; text-align: left; letter-spacing: -.02em;}
+                p{font-size: 46px; padding: 10px; color: $text; font-family: $font2; font-weight: 400; text-align: left; }
                 a{color: $primary;
                     &:hover {color: $text;}
                 }
             }
             figure{flex: 0 0 368px; position: relative;
-                figcaption { background-color: rgba(255,255,255,.8); width: 100%; bottom: 0; position: absolute; text-transform: uppercase; padding: 4px 15px; font-weight: 400; font-size: 18px; letter-spacing: 0.1em;}
+                figcaption { background-color: rgba(255,255,255,.8); width: 100%; bottom: 0; position: absolute; text-transform: uppercase; padding: 5px 15px; font-weight: 600; font-size: 18px; 
+                    a {color: $text;letter-spacing: 2px;
+                        &:hover {color: $primary;}
+                    }
+                    span {margin: 0 5px;}
+                }
             }
         }
     }
@@ -175,7 +191,7 @@ header{position:relative;padding:10px;z-index:100;background-color:#FFF; filter:
             .smalltext { margin-top: 30px; color: $text; font-size: 20px; font-weight: 700; font-style: normal; letter-spacing: normal; line-height: 1; }
         }
     }
-    .use-it-very-bottom-text .big {color: #fff; font-size: 39px; margin-bottom: 50px;}
+    .use-it-very-bottom-text .big {color: #fff; font-size: 39px;}
 }
 
 
@@ -183,9 +199,15 @@ header{position:relative;padding:10px;z-index:100;background-color:#FFF; filter:
     .title { text-align: left }
 }
 
-footer .hours {text-align: left; max-width: 280px; margin: 0 auto 30px;
-    div {display: flex; justify-content: space-between; margin: 5px 0;}
+#footer-hours {
+    > p {font-size: 20px;font-family: $font;margin-top: 80px;}
+    .hours {text-align: left; width: 100%; margin: 0 auto 30px;max-width: 350px;padding: 0 10px;
+        div {display: flex; justify-content: space-between; margin: 10px 0;
+            label, span {font-size: 20px;font-family: $font;}
+        }
+    }
 }
+
 
 #form { text-align: center; overflow: hidden; margin: 0px 0 0 auto; padding: 0; width: 100%;
     .input { width: 100%; display: flex !important; align-items: center; justify-content: center }
@@ -214,16 +236,16 @@ footer .hours {text-align: left; max-width: 280px; margin: 0 auto 30px;
 
 
 @media (max-width: 820px) {
-.ctm-call-widget {height: 685px!important;}
+.ctm-call-widget {height: 665px!important;}
 }
 @media (min-width: 820px) {
-.ctm-call-widget {height: 550px!important;}
+.ctm-call-widget {height: 500px!important;}
 }
 
 /* ---------------- Contact --------------- */
 
 footer { padding-top: 30px; background-color: #FFFFFF;
-    .flex-ed {justify-content: center; align-items: center;  max-width: 1280px; margin: auto; align-items: flex-start; justify-content: space-around;}
+    .flex-ed {justify-content: center; align-items: center;  max-width: 1350px; margin: auto; align-items: flex-start; justify-content: space-around;}
     hr {width: 75px; background-color: $secondary;
         height: 4px; 
         margin: 20px auto 30px;
@@ -233,15 +255,15 @@ footer { padding-top: 30px; background-color: #FFFFFF;
     }
     .ft-logo {margin: 20px auto 40px;}
     article { text-align: center; margin: 10px; flex: 0 1 350px;padding: 10px; }
-    .phone {font-size: 37px; font-family: $font; color: $primary; margin: 20px auto 30px; font-weight: 700; display: block; padding-left: 0;
+    .phone {font-size: 41px; font-family: $font; color: $primary; margin: 20px auto 30px; font-weight: 600; display: block; padding-left: 0;
         &:hover {color: $secondary; }
     }
-    .address { color: #121212; font-size: 18px; line-height: 26px;letter-spacing: 0.45px; font-weight: 400;
+    .address { color: #121212; font-size: 20px; line-height: 26px;letter-spacing: 0.45px; font-weight: 400;
         small {text-transform: uppercase;font-size: 15px;
           letter-spacing: 0.38px; margin: 12px auto; display: block;}
         &:hover {color: $primary; }
     }
-    h3 {color: #121618; margin-top: 10px; font-weight: 400;}
+    h3 {color: #121618; margin-top: 10px; font-weight: 400;margin-bottom: 0; width: 100%;}
 }
 
 #contact {flex: 0 1 460px;padding: 10px 10px 20px;}
@@ -251,7 +273,7 @@ footer { padding-top: 30px; background-color: #FFFFFF;
 }
 
 .copy {  font: 400 18px/1.4 $font;   color: $text;  margin-top: 20px; text-align: center; padding:10px 0 60px; 
-    span {padding: 0 5px;}
+    span:not(:first-of-type) {padding: 0 5px;}
     a { margin: auto;  color: $primary;
         &:hover { color: $secondary;}
      }
@@ -278,7 +300,7 @@ hr{border-bottom:1px solid rgba(151,151,151,0.74);box-shadow:5px 1px 1px rgba(14
     .banner article {max-width: 680px;}
     .banner article h1 {font-size: 82px;}
     .banner article p {font-size: 19px;}
-    .banner article .banner-stamp {max-width: 330px; top: 0;}
+    .banner article .banner-stamp { top: -55px;}
 }
 @media (max-width: 1110px) {
 h1{font-size:40px}
@@ -288,44 +310,53 @@ footer h3 {font-size: 40px;}
 #contact {flex: 0 1 360px}
 }
 @media (max-width: 1024px) {
-    #nav .logo{margin:0}
-    #nav .header-buttons{display: none;}
-    header .phy{display:none}
-    header {padding: 0;}
-    #nav .logo {margin: 10px auto;}
-    .phone{font-size:30px;margin:0; display: none;}
-    
+    header {padding: 0;
+        #nav {padding: 0;
+            .logo{margin:20px auto}
+            .header-buttons{display: none;}
+            .phy, .phone{display:none}
+        }
+    }
+    .callout-icons {margin: 0 auto 60px;
+        h2 {margin: 0;}
+    }
     #special .special-text {position: relative; margin: -30px 0; display: block;}
 
     .mobile-buttons {display: flex; align-items: stretch; flex-wrap: nowrap; width: 100%;
-        a {flex: 0 1 50%; padding: 15px 10px; font: 600 21px/1.1 $font;  letter-spacing: 0.05em; color: #fff; text-transform: uppercase; background:$secondary; text-align: center;
+        a {flex: 0 1 50%; padding: 15px 10px; font: 600 21px/1.1 $font;  letter-spacing: 0.05em; color: #fff; text-transform: uppercase; background:#000; text-align: center;
             span {display: block; font-size: 26px;}
             small {font-size: 14px; display: block;}
-            &:nth-of-type(2) {background: $primary; color: white;padding: 15px 10px; font-size: 16px; span {font-size: 26px;}}
+            &:nth-of-type(2) {background: $primary; color: white;padding: 17px 10px 10px; font-size: 16px; span {font-size: 26px;}}
         }
     }
 
-    .banner article {position: relative; top: auto; transform: none; left: auto; margin: 0 auto;}
+    .banner article {position: relative; top: auto; transform: none; left: auto; margin: 0 auto;padding-top: 45px; z-index: 2;}
+    .banner article:after {position: absolute; height: 100%; width: 100vw; content: ''; background: #AFD5D8; left: 50%; top: 0; transform: translateX(-50%); z-index: -1;}
 
-hr{display:block;max-width:95%}
-.useit .use-banner article {display: flex; flex-direction: column-reverse; margin-top: 40px;}
-.useit .use-banner article p {font-size: 14px; line-height: 1; margin: 10px auto;}
-.phone {font-size: 25px;}
-.useit .use-banner article p br {display: none}
-.use-it-top-image div figcaption {position: relative; margin: auto;}
-.useit .top {margin: 0 auto 30px;}
-footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
-#contact {flex: 0 1 690px;}
-#services, #footer-form {flex: 1;}
-.callout-icons .flex-ed  {flex-wrap: wrap;}
-.callout-icons .flex-ed .callout-item {flex: 0 1 50%;}
-.callout-icons .flex-ed .callout-item:nth-of-type(odd) {background: white;}
-.callout-icons .flex-ed .callout-item:nth-of-type(2), .callout-icons .flex-ed .callout-item:nth-of-type(3) {background: rgba(9, 51, 94, 0.04);}
-.useit .use-it-very-bottom-text .big {font-size: 35px;}
+    hr{display:block;max-width:95%}
+    .useit {z-index: 1;}
+    .useit .use-banner article {display: flex; flex-direction: column-reverse; margin-top: 40px;}
+    .useit .use-banner article p {font-size: 14px; line-height: 1; margin: 10px auto;}
+    .phone {font-size: 25px;}
+    .useit .use-banner article p br {display: none}
+    .use-it-top-image div figcaption {position: relative; margin: auto;}
+    .useit .top {margin: 0 auto 30px;}
+    footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
+    #contact {flex: 0 1 690px;}
+    #services, #footer-form {flex: 1;}
+    .callout-icons .flex-ed  {flex-wrap: wrap;}
+    .callout-icons .flex-ed .callout-item {flex: 0 1 50%;}
+    .callout-icons .flex-ed .callout-item:nth-of-type(odd) {background: white;}
+    .callout-icons .flex-ed .callout-item:nth-of-type(2), .callout-icons .flex-ed .callout-item:nth-of-type(3) {background: rgba(9, 51, 94, 0.04);}
+    .useit .use-it-very-bottom-text .big {font-size: 35px;}
 
-.double-list .flex-ed {flex-wrap: wrap; justify-content: center;
-    .option-list {margin: 40px auto;}
-}
+    .double-list .flex-ed {flex-wrap: wrap; justify-content: center;
+        .option-list {margin: 40px auto;}
+    }
+    .banner article .banner-stamp {position: relative; top: auto; right: auto;margin-bottom: 15px;}
+    .banner article, .banner article h1 {text-align: center;}
+    .banner article h1 {color: #fff;}
+    .banner figure {display: none;}
 }
 
 @media (max-width: 890px) {
@@ -336,6 +367,7 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
 }
 
 @media (max-width: 740px) {
+    .bg-2 {padding: 10px 20px;}
     #nav .header-buttons{margin: 0; padding: 3px 5px;}
     #nav {padding-bottom: 0; flex-wrap: wrap;}
     #nav .logo {flex: 0 1 100%; max-width: 100%;}
@@ -352,19 +384,16 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
     .useit .use-banner article {margin-top: 10px; margin-bottom: 20px;}
     .bg-1 {padding: 0}
     .useit .use-it-very-bottom-text .big {font-size: 26px;}
-
-    .banner article .banner-stamp {position: relative; top: auto; right: auto;}
-    .banner article, .banner article h1 {text-align: center;}
-    .banner article h1 {color: $secondary; text-shadow: none;}
 }
 
 @media (max-width: 590px) {
     #nav {justify-content: center;}
     #nav .logo{margin-bottom:20px;max-width:90%}
-    #nav .logo img {max-width: 300px;}
+    #nav .logo img {max-width: 300px;margin: 0 auto;}
     h1 span{font-size:60px;margin:10px auto}
     h1 {font-size: 38px;}
-    .callout-icons h2 {font-size: 24px; padding: 15px 25px;
+    .callout-icons h2 {font-size: 30px;
+        padding: 25px 10px;
         span {font-size: 40px;}
     }
 
@@ -372,7 +401,7 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
     #special .offer-text span {font-size: 110px; line-height: 1.2;}
     #special:after {background-size: contain;}
 
-    .banner article h1 {font-size: 70px;}
+    .banner article h1 {font-size: 64px;}
 
     footer .ft-logo {margin: 40px auto 20px;}
     .useit .top h1 {font-size: 55px;}
@@ -388,12 +417,11 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
     footer #contact {padding: 20px 10px;}
     footer .flex-ed {display: block;}
     #contact {display: none;}
-	.copy {padding: 10px 10px 25px; }
-    .copy span:first-of-type {display: block; visibility: hidden; font-size: 1px;}
-    .copy span:last-of-type {display: block; font-size: 1px; visibility: hidden; }
+	.copy {padding: 10px 10px 25px;}
     .useit .use-banner article .fluid-vid{width: 400px!important;}
     .double-list .flex-ed .option-list h2 {font-size: 40px;}
-    .useit .content .call article p {font-size: 35px;}
+    .useit .content .call article p{font-size: 34px;
+        padding: 5px 0;}
 }
 
 @media (max-width: 500px) {
@@ -405,7 +433,8 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
     .split article .btn{margin-bottom:20px;min-width:auto}
     #team figure{display:table}
     #services h3{margin-top:10px}
-    .copy {padding-bottom: 20px; font-size: 14px;}
+    .copy {padding: 20px 30px;
+        font-size: 20px;}
     #fixed-tabs a{font-size:15px}
     .services .flex-ed img {max-width:200px;}
     .useit .use-banner article div figcaption span {padding: 5px;}
@@ -417,7 +446,11 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
 .callout-icons .flex-ed .callout-item:nth-of-type(odd) {background: rgba(9, 51, 94, 0.04);}
 .callout-icons .flex-ed .callout-item:nth-of-type(2){background: #fff;}
 }
-
+@media (max-width: 400px) {
+    .mobile-buttons a {font-size: 20px;padding: 10px !important;
+        &:last-of-type {font-size: 18px;}
+    }
+}
 @media (max-width: 370px) {
     #nav{display:block}
     #nav .btn{margin:10px auto}
@@ -425,4 +458,5 @@ footer .flex-ed {flex-wrap: wrap; max-width: 700px; margin: auto;}
     .double-list .flex-ed .option-list .list-body .list-bkg {display: none;}
     .useit .content .call article p {font-size: 30px;}
     footer article {padding: 5px; margin: 10px 0;}
+    footer .phone {font-size: 34px;}
 }
